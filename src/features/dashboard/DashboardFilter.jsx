@@ -1,5 +1,10 @@
 import Filter from '../../ui/Filter';
 import useBanks from './useBanks';
+import DateRange from '../../ui/DateRange'
+
+
+
+
 
 function DashboardFilter() {
   const { isLoading, banks } = useBanks();
@@ -9,7 +14,6 @@ function DashboardFilter() {
   if (banks) {
     filter = [];
     banks.forEach(element => {
-   
       filter.push({
         value: element.id,
         text: element.name
@@ -31,14 +35,7 @@ function DashboardFilter() {
           { text: 'FD', value: '4' }
         ]}
       />
-      <Filter
-        filterField='last'
-        options={[
-          { value: '7', text: 'Last 7 days' },
-          { value: '30', text: 'Last 30 days' },
-          { value: '90', text: 'Last 90 days' },
-        ]}
-      />
+      <DateRange />
     </>
   );
 }

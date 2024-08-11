@@ -1,7 +1,7 @@
 import React from "react";
 import Stat from "./Stat";
 import { HiOutlineBriefcase } from "react-icons/hi";
-import { HiOutlineBanknotes, HiOutlineCalendarDays } from "react-icons/hi2";
+import { HiBanknotes, HiMiniBanknotes, HiOutlineBanknotes, HiOutlineCalendarDays } from "react-icons/hi2";
 import { formatCurrency } from "../../utils/helpers";
 export default function stats({
   debitAmount, debitTransactionCount, creditAmount, creditTransactionCount, totalAmount
@@ -16,17 +16,17 @@ export default function stats({
   return (
     <>
       <Stat
-        title="Debit"
-        color={"yellow"}
-        icon={<HiOutlineBanknotes />}
+        title="Debited Amount"
+        color={"red"}
+        icon={<HiMiniBanknotes />}
         value={formatCurrency(debitAmount)}
       />
 
 
       <Stat
-        title="Credit"
+        title="Credited Amount"
         color={"green"}
-        icon={<HiOutlineBanknotes />}
+        icon={<HiMiniBanknotes />}
         value={formatCurrency(creditAmount)}
       />
       <Stat
@@ -37,16 +37,16 @@ export default function stats({
       />
       <Stat
         title="Credit Transactions"
-        color={"blue"}
+        color={"green"}
         icon={<HiOutlineBriefcase />}
         value={creditTransactionCount}
       />
 
       <Stat
-        title="Total Transactions"
-        color={"indigo"}
-        icon={<HiOutlineCalendarDays />}
-        value={totalTransaction}
+        title="Balance"
+        color={"blue"}
+        icon={<HiOutlineBanknotes />}
+        value={formatCurrency(totalAmount)}
       />
       {/* <Stat
         title="Occupancy Rate"

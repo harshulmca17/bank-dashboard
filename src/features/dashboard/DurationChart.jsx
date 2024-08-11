@@ -42,6 +42,10 @@ const startDataLight = [
     duration: "RD ",
     value: 0,
     color: "#22c55e",
+  }, {
+    duration: "NEFT",
+    value: 0,
+    color: "#14b8a6",
   },
   {
     duration: "OTHER",
@@ -69,6 +73,10 @@ const startDataDark = [
     duration: "RD ",
     value: 0,
     color: "#4d7c0f",
+  }, {
+    duration: "NEFT",
+    value: 0,
+    color: "#0f766e",
   }, {
     duration: "OTHER",
     value: 0,
@@ -207,9 +215,9 @@ export default function DurationChart({ entries }) {
             dataKey={"value"}
             innerRadius={85}
             outerRadius={110}
-            // cx={'40%'}
-            // cy={'50%'}
-            // paddingAngle={50}
+          // cx={'40%'}
+          // cy={'50%'}
+          // paddingAngle={50}
           >
             {data.map((entry) => (
               <Cell

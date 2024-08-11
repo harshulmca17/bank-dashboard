@@ -64,15 +64,15 @@ function MainNav() {
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/bookings">
+          <StyledNavLink to="/statement">
             <HiOutlineCalendarDays />
-            <span>Bookings</span>
+            <span>Statment</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/cabins">
+          <StyledNavLink to="/bank-accounts">
             <HiOutlineHomeModern />
-            <span>Cabins</span>
+            <span>Bank Account</span>
           </StyledNavLink>
         </li>
         <li>

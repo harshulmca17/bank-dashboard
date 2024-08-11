@@ -17,6 +17,7 @@ import Booking from "./pages/Booking.jsx";
 import Checkin from "./pages/Checkin.jsx";
 import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 import { DarkModeProvider } from "./context/DarkModeContext.jsx";
+import BankAccounts from "./pages/BankAccounts.jsx";
 
 
 
@@ -50,6 +51,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/bookings" element={<Bookings />} />
               <Route path="/booking/:bookingId" element={<Booking />} />
+              <Route path="/bank-accounts" element={<BankAccounts  />} />
               <Route path="/payment/:bookingId" element={<Checkin />} />
               <Route path="/cabins" element={<Cabins />} />
               <Route path="/users" element={<Users />} />

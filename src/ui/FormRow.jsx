@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const StyledFormRow = styled.div`
   display: grid;
@@ -20,9 +21,9 @@ const StyledFormRow = styled.div`
 
   &:not(:last-child) {
     border-bottom: ${(props) =>
-      props.orientation === "vertical"
-        ? "none"
-        : "1px solid var(--color-grey-100)"};
+    props.orientation === "vertical"
+      ? "none"
+      : "1px solid var(--color-grey-100)"};
   }
 
   /* Special treatment if the row contains buttons, and if it's NOT a vertical row */
@@ -39,6 +40,7 @@ const StyledFormRow = styled.div`
 
 const Label = styled.label`
   font-weight: 500;
+  color: var(${props => props.darkMode ? '--color-silver-700' : '--color-grey-900'});
 `;
 
 const Error = styled.span`
@@ -47,9 +49,10 @@ const Error = styled.span`
 `;
 
 function FormRow({ label, error, children, orientation }) {
+  const { darkMode } = useDarkMode();
   return (
     <StyledFormRow orientation={orientation}>
-      {label && <Label htmlFor={children.props.id}>{label}</Label>}
+      {label && <Label htmlFor={children.props.id} darkMode={darkMode}>{label}</Label>}
       {children}
       {error && <Error>{error}</Error>}
     </StyledFormRow>
